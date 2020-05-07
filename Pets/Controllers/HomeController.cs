@@ -33,5 +33,20 @@ namespace Pets.Controllers
     {
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    [HttpPost]
+    [Route("signin")]
+    public IActionResult SignIn(SignInModel model)
+    {
+      Console.WriteLine(model.Username);
+
+      if (model.Password == "admin")
+      {
+        return View("~/Views/Home/SignIn.cshtml");
+      } else
+      {
+        return View("~/Views/Home/Index.cshtml");
+      }
+    }
   }
 }
