@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Pets.Models;
@@ -11,7 +12,12 @@ namespace Pets.Controllers
 {
   public class HomeController : Controller
   {
+
     private readonly ILogger<HomeController> _logger;
+
+    private UserManager<SignInModel> _userManager = new UserManager<SignInModel>();
+
+    private SignInManager<SignInModel> _signInManager;
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -36,8 +42,16 @@ namespace Pets.Controllers
 
     [HttpPost]
     [Route("signin")]
-    public IActionResult SignIn(SignInModel model)
+    public async Task<IActionResult> SignIn(SignInModel model)
     {
+      var result = await _userManager.CreateAsync(model, model.Password);
+
+      /*
+      var result2 = await _signInManager.PasswordSignInAsync(Input.Email,
+                   Input.Password, Input.RememberMe, lockoutOnFailure: true);
+                   */
+
+
       Console.WriteLine(model.Username);
 
       if (model.Password == "admin")
