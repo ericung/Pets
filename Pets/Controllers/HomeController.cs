@@ -15,9 +15,9 @@ namespace Pets.Controllers
 
     private readonly ILogger<HomeController> _logger;
 
-    private UserManager<SignInModel> _userManager = new UserManager<SignInModel>();
+    // private UserManager<IdentityUser> _userManager = new UserManager<IdentityUser>();
 
-    private SignInManager<SignInModel> _signInManager;
+    private SignInManager<SignInViewModel> _signInManager;
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -38,29 +38,6 @@ namespace Pets.Controllers
     public IActionResult Error()
     {
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-
-    [HttpPost]
-    [Route("signin")]
-    public async Task<IActionResult> SignIn(SignInModel model)
-    {
-      var result = await _userManager.CreateAsync(model, model.Password);
-
-      /*
-      var result2 = await _signInManager.PasswordSignInAsync(Input.Email,
-                   Input.Password, Input.RememberMe, lockoutOnFailure: true);
-                   */
-
-
-      Console.WriteLine(model.Username);
-
-      if (model.Password == "admin")
-      {
-        return View("~/Views/Home/SignIn.cshtml");
-      } else
-      {
-        return View("~/Views/Home/Index.cshtml");
-      }
     }
   }
 }
