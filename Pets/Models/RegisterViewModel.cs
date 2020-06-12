@@ -10,7 +10,7 @@ namespace Pets.Models
   {
     [Required]
     [EmailAddress]
-    public String Username { get; set; }
+    public String Email { get; set; }
 
     [Required]
     [DataType(DataType.Password)]
@@ -18,6 +18,6 @@ namespace Pets.Models
 
     [Required]
     [DataType(DataType.Password)]
-    public String RetypePassword { get; set; }
+    public String PasswordConfirm { get; set; }
   }
 }

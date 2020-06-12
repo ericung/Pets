@@ -1,21 +1,22 @@
-﻿
+﻿@model RegisterViewModel
+
 @{
 	ViewData["Title"] = "Register";
 }
 
 <h1>Register</h1>
 
-<form method="post" action="signin">
+<form method="post" action="register">
 	<p>
-		<input type="text" id="username" name="username" placeholder="User" />
+		<input type="text" id="email" name="email" placeholder="User" />
 	</p>
 	<p>
 		<input type="text" id="password" name="password" placeholder="Password" />
 	</p>
 	<p>
-		<input type="text" id="password" name="passwordconfirm" placeholder="Retype Password" />
+		<input type="text" id="passwordconfirm" name="passwordconfirm" placeholder="Retype Password" />
 	</p>
 	<p>
-		<input type="submit" onsubmit="" />
+		<input type="submit" onsubmit="" value="Enter"/>
 	</p>
 </form>
