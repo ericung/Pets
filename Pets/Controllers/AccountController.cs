@@ -26,21 +26,35 @@ namespace Pets.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> SignIn(SignInViewModel model)
+    public async Task<IActionResult> SignIn(SignInViewModel model, string returnUrl)
     {
       if (ModelState.IsValid)
       {
-        var result = await signInManager.PasswordSignInAsync(model.Username, model.Password, true, false);
-        
+        var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
+
         if (result.Succeeded)
         {
-          return RedirectToAction("index", "home");
+          if (!string.IsNullOrEmpty(returnUrl))
+          {
+            return LocalRedirect(returnUrl);
+          }
+          else
+          {
+            return RedirectToAction("index", "home");
+          }
         }
 
-        ModelState.AddModelError(string.Empty, "Invalid Sign In Attempt");
+        ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
       }
 
       return View(model);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> SignOut()
+    {
+      await signInManager.SignOutAsync();
+      return RedirectToAction("index", "home");
     }
 
     [HttpGet]
