@@ -11,9 +11,11 @@ namespace Pets.Controllers
   public class AccountController : Controller
   {
     private readonly SignInManager<IdentityUser> signInManager;
+    private readonly UserManager<IdentityUser> userManager;
 
     public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
     {
+      this.userManager = userManager;
       this.signInManager = signInManager;
     }
 
