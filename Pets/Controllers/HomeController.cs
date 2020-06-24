@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Pets.Models;
+using Pets.ViewModels;
 
 namespace Pets.Controllers
 {

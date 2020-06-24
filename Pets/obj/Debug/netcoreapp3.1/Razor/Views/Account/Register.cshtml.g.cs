@@ -26,8 +26,22 @@ using Pets.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Eric\source\repos\Pets\Pets\Views\_ViewImports.cshtml"
+using Pets.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Eric\source\repos\Pets\Pets\Views\_ViewImports.cshtml"
+using Pets.Repository;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85240c06343a4230d0efa6c01e8c0a9a312b10ed", @"/Views/Account/Register.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"97e035cb3d2808fbd1b0a263a419d4dfbb18e485", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74b41b3bc511db05b49ff7a7fe8cd457ff321c65", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_Register : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<RegisterViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +81,7 @@ using Pets.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Register</h1>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85240c06343a4230d0efa6c01e8c0a9a312b10ed4077", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85240c06343a4230d0efa6c01e8c0a9a312b10ed4411", async() => {
                 WriteLiteral(@"
 	<p>
 		<input type=""text"" id=""email"" name=""email"" placeholder=""User"" />

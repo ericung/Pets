@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pets.Controllers;
 using Pets.Data;
+using Pets.Repository;
 
 namespace Pets
 {
@@ -32,6 +33,8 @@ namespace Pets
       services.AddDbContextPool<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PetDBConnection")));
 
       services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+      services.AddScoped<IPetRepository, SQLPetRepository>();
 
       services.Configure<IdentityOptions>(options =>
       {

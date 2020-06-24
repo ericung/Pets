@@ -1,6 +1,6 @@
 using System;
 
-namespace Pets.Models
+namespace Pets.ViewModels
 {
   public class ErrorViewModel
   {

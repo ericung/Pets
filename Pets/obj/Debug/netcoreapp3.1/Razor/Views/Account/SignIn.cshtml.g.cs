@@ -26,8 +26,22 @@ using Pets.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Eric\source\repos\Pets\Pets\Views\_ViewImports.cshtml"
+using Pets.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Eric\source\repos\Pets\Pets\Views\_ViewImports.cshtml"
+using Pets.Repository;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d71da3f845dce9209bb25db37715bb1fa1afa9b", @"/Views/Account/SignIn.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"97e035cb3d2808fbd1b0a263a419d4dfbb18e485", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74b41b3bc511db05b49ff7a7fe8cd457ff321c65", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_SignIn : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SignInViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -57,7 +71,7 @@ using Pets.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Welcome</h1>\r\n    <p>Learn about <a href=\"https://docs.microsoft.com/aspnet/core\">building Web apps with ASP.NET Core</a>.</p>\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d71da3f845dce9209bb25db37715bb1fa1afa9b3672", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d71da3f845dce9209bb25db37715bb1fa1afa9b4006", async() => {
                 WriteLiteral("\r\n        <p>\r\n\t\t\t<input type=\"text\" id=\"email\" name=\"email\" placeholder=\"User\" />\r\n\t\t</p>\r\n        <p>\r\n\t\t\t<input type=\"text\" id=\"password\" name=\"password\" placeholder=\"Password\" />\r\n\t\t</p>\r\n        <p>\r\n\t\t\t<input type=\"submit\"");
                 BeginWriteAttribute("onsubmit", " onsubmit=\"", 461, "\"", 472, 0);
                 EndWriteAttribute();

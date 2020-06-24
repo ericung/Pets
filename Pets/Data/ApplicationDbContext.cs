@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Pets.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Pets.Data
     {
 
     }
+
+    public DbSet<Pet> Pets { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
