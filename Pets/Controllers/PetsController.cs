@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -34,7 +35,7 @@ namespace Pets.Controllers
     {
       Pet pet = new Pet();
       pet.Id = Guid.NewGuid();
-      pet.AccountId = User.Identity.Name;
+      pet.AccountId = User.FindFirstValue(ClaimTypes.NameIdentifier);
       pet.Name = createViewModel.Name;
       pet.AnimalType = createViewModel.Animal;
       _petRepository.AddPet(pet);
