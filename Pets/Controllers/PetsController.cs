@@ -18,7 +18,7 @@ namespace Pets.Controllers
     private readonly IPetRepository _petRepository;
     private readonly UserManager<IdentityUser> _userManager;
 
-    public PetsController(IPetRepository petRepository, UserManager<IdentityUser> userManager)
+    public PetsController(UserManager<IdentityUser> userManager, IPetRepository petRepository)
     {
       _petRepository = petRepository;
       _userManager = userManager;
