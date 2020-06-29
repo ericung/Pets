@@ -10,6 +10,12 @@ namespace Pets.Repository
   {
     IEnumerable<Pet> GetPetsByUserId(string userId);
 
+    Pet GetPetById(Guid petId);
+
     Pet AddPet(Pet pet);
+
+    Pet UpdatePet(Pet petChanges);
+
+    Pet RemovePet(String id);
   }
 }

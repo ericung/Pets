@@ -28,5 +28,31 @@ namespace Pets.Repository
     {
       return context.Pets.Where(element => element.AccountId == userId);
     }
+
+    public Pet GetPetById(Guid id)
+    {
+      IEnumerable<Pet> pets = context.Pets.Where(element => element.Id.Equals(id));
+      return pets.FirstOrDefault();
+    }
+
+    public Pet RemovePet(string id)
+    {
+      Pet pet = context.Pets.Find(id);
+      if (pet != null)
+      {
+        context.Pets.Remove(pet);
+        context.SaveChanges();
+      }
+
+      return pet;
+    }
+
+    public Pet UpdatePet(Pet petChanges)
+    {
+      var employee = context.Pets.Attach(petChanges);
+      employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+      context.SaveChanges();
+      return petChanges;
+    }
   }
 }

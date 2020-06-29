@@ -149,3 +149,4 @@ C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\staticwebassets\Pet
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Pets.genruntimeconfig.cache
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Pets.csprojAssemblyReference.cache
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Pets\Create.cshtml.g.cs
+C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Pets\Update.cshtml.g.cs

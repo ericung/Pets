@@ -40,5 +40,21 @@ namespace Pets.Controllers
       return RedirectToAction("Index", "Home");
     }
 
+    [HttpGet]
+    public IActionResult Update(Guid id)
+    {
+      Pet pet = _petRepository.GetPetById(id);
+      UpdateViewModel updateViewModel = new UpdateViewModel();
+      updateViewModel.Name = pet.Name;
+      updateViewModel.Animal = pet.AnimalType;
+      return View(updateViewModel);
+    }
+
+    [HttpPost]
+    public IActionResult Update()
+    {
+      return View();
+    }
+
   }
 }
