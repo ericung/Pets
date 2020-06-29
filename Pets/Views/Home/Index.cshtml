@@ -4,17 +4,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> -->
+<div class="card-deck">
     @if (Model.Pets != null)
 	{
 		@foreach(var pet in Model.Pets)
 		{
-			<div>
-				<h1>@pet.Name</h1>
+			<div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
+				<div class="card-header">
+					@pet.Name
+				</div>
 				<div>
 					@pet.AnimalType
+				</div>
+				<div class="card-footer text-center">
+						<a asp-controller="home" asp-action="details" asp-route-id="@pet.Id"
+					   class="btn btn-primary m-1">View</a>
+					<a asp-controller="home" asp-action="edit" asp-route-id="@pet.Id"
+					   class="btn btn-primary m-1">Edit</a>
+					<a href="#" class="btn btn-danger m-1">Delete</a>
 				</div>
 			</div>
 		}
