@@ -47,6 +47,7 @@ namespace Pets.Controllers
       UpdateViewModel updateViewModel = new UpdateViewModel();
       updateViewModel.Name = pet.Name;
       updateViewModel.Animal = pet.AnimalType;
+      
       return View(updateViewModel);
     }
 
@@ -56,5 +57,15 @@ namespace Pets.Controllers
       return View();
     }
 
+    [HttpGet]
+    public IActionResult Detail(Guid id)
+    {
+      Pet pet = _petRepository.GetPetById(id);
+      DetailViewModel detailViewModel = new DetailViewModel();
+      detailViewModel.Name = pet.Name;
+      detailViewModel.Animal = pet.AnimalType;
+
+      return View(detailViewModel);
+    }
   }
 }
