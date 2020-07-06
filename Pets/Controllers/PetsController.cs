@@ -52,9 +52,13 @@ namespace Pets.Controllers
     }
 
     [HttpPost]
-    public IActionResult Update()
+    public IActionResult Update(UpdateViewModel updateViewModel)
     {
-      return View();
+      Pet pet = _petRepository.GetPetById(updateViewModel.Id);
+      pet.Name = updateViewModel.Name;
+      pet.AnimalType = updateViewModel.Animal;
+      _petRepository.UpdatePet(pet);
+      return RedirectToAction("Index", "Home");
     }
 
     [HttpGet]
