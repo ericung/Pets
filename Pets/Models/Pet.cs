@@ -15,5 +15,11 @@ namespace Pets.Models
 
     [Required]
     public String Name { get; set; }
+
+    public int MaxHunger { get; set; }
+
+    public int CurrentHunger { get; set; }
+
+    public DateTime LastAte { get; set; }
   }
 }

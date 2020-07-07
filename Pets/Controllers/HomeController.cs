@@ -36,6 +36,7 @@ namespace Pets.Controllers
       {
         String userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         indexViewModel.Pets = petRepository.GetPetsByUserId(userId).ToList();
+        petRepository.UpdateHunger(userId);
       }
 
       return View(indexViewModel);

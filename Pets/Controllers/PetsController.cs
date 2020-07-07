@@ -66,10 +66,30 @@ namespace Pets.Controllers
     {
       Pet pet = _petRepository.GetPetById(id);
       DetailViewModel detailViewModel = new DetailViewModel();
+      detailViewModel.Id = pet.Id;
       detailViewModel.Name = pet.Name;
       detailViewModel.Animal = pet.AnimalType;
+      detailViewModel.CurrentHunger = pet.CurrentHunger;
+      detailViewModel.MaxHunger = pet.MaxHunger;
 
       return View(detailViewModel);
+    }
+
+    [HttpGet]
+    public IActionResult Feed(Guid id)
+    {
+      _petRepository.FeedPet(id, 5);
+
+      Pet pet = _petRepository.GetPetById(id);
+      DetailViewModel detailViewModel = new DetailViewModel();
+      detailViewModel.Id = pet.Id;
+      detailViewModel.Name = pet.Name;
+      detailViewModel.Animal = pet.AnimalType;
+      detailViewModel.CurrentHunger = pet.CurrentHunger;
+      detailViewModel.MaxHunger = pet.MaxHunger;
+
+
+      return View("Detail", detailViewModel);
     }
   }
 }

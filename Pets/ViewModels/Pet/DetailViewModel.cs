@@ -10,5 +10,9 @@ namespace Pets.ViewModels
   public class DetailViewModel : CreateViewModel
   {
     public Guid Id { get; set; }
+
+    public int CurrentHunger { get; set; }
+
+    public int MaxHunger { get; set; }
   }
 }

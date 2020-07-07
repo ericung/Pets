@@ -3,4 +3,8 @@
 <div class="container">
 	<h3>@Model.Name</h3>
 	<p>This is a @Model.Animal</p>
+	<p>@Model.CurrentHunger / @Model.MaxHunger </p>
 </div>
+
+<a asp-controller="pets" asp-action="feed" asp-route-id="@Model.Id" class="btn btn-primary m-1">Feed</a>
+

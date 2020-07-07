@@ -16,6 +16,10 @@ namespace Pets.Repository
 
     Pet UpdatePet(Pet petChanges);
 
+    void UpdateHunger(String userId);
+
     Pet RemovePet(String id);
+
+    Pet FeedPet(Guid id, int food);
   }
 }
