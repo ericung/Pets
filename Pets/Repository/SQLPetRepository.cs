@@ -82,19 +82,25 @@ namespace Pets.Repository
       foreach (Pet petHunger in pets)
       {
         TimeSpan difference = DateTime.Now.Subtract(petHunger.LastAte);
-        int hunger = petHunger.CurrentHunger - difference.Days;
-
-        if (hunger < 0 )
+        if (difference.Days > 1)
         {
-          petHunger.CurrentHunger = 0;
-        }
-        else
-        {
-          petHunger.CurrentHunger = hunger;
-        }
 
-        var pet = context.Pets.Attach(petHunger);
-        pet.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+          int hunger = petHunger.CurrentHunger - difference.Days;
+
+          if (hunger < 0 )
+          {
+            petHunger.CurrentHunger = 0;
+          }
+          else
+          {
+            petHunger.CurrentHunger = hunger;
+          }
+
+          petHunger.LastAte = DateTime.Now;
+
+          var pet = context.Pets.Attach(petHunger);
+          pet.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        }
       }
 
       context.SaveChanges();
@@ -112,6 +118,11 @@ namespace Pets.Repository
       }
 
       pet.CurrentHunger = hunger;
+
+      var petSave = context.Pets.Attach(pet);
+      petSave.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+      context.SaveChanges();
+
       return pet;
     }
   }
