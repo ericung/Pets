@@ -82,7 +82,7 @@ namespace Pets.Repository
       foreach (Pet petHunger in pets)
       {
         TimeSpan difference = DateTime.Now.Subtract(petHunger.LastAte);
-        if (difference.Days > 1)
+        if (difference.Days >= 1)
         {
 
           int hunger = petHunger.CurrentHunger - difference.Days;
