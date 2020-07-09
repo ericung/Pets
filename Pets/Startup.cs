@@ -36,7 +36,7 @@ namespace Pets
 
       services.AddScoped<IPetRepository, SQLPetRepository>();
 
-      services.AddScoped<IFoodRepository, SQLFoodRepository>();
+      services.AddScoped<IItemRepository, SQLItemRepository>();
 
       services.Configure<IdentityOptions>(options =>
       {

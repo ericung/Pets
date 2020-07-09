@@ -75,7 +75,7 @@ namespace Pets.Repository
       return petChanges;
     }
 
-    public void UpdateHunger(String userId)
+    public void UpdateHunger(string userId)
     {
       IEnumerable<Pet> pets = context.Pets.Where(element => element.AccountId == userId);
 

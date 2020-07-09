@@ -151,3 +151,4 @@ C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Pets.csprojAssembly
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Pets\Create.cshtml.g.cs
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Pets\Update.cshtml.g.cs
 C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Pets\Detail.cshtml.g.cs
+C:\Users\Eric\source\repos\Pets\Pets\obj\Debug\netcoreapp3.1\Razor\Views\Inventory\Index.cshtml.g.cs

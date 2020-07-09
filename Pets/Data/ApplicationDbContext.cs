@@ -17,6 +17,8 @@ namespace Pets.Data
 
     public DbSet<Pet> Pets { get; set; }
 
+    public DbSet<Item> Items { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
