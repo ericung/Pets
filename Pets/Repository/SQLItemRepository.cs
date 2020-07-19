@@ -21,5 +21,12 @@ namespace Pets.Repository
       IEnumerable<Item> inventory = context.Items.Where(element => element.AccountId == userId);
       return inventory;
     }
+
+    public Item Create(Item item)
+    {
+      context.Items.Add(item);
+      context.SaveChanges();
+      return item;
+    }
   }
 }

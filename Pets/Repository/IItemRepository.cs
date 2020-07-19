@@ -9,5 +9,7 @@ namespace Pets.Repository
   public interface IItemRepository
   {
     IEnumerable<Item> GetInventory(string userId);
+
+    Item Create(Item item);
   }
 }
