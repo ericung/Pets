@@ -54,9 +54,9 @@ namespace Pets.Controllers
       Item item = new Item();
       item.Id = Guid.NewGuid();
       item.AccountId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-      item.Name = "Food";
-      item.Type = ItemType.Food;
-      item.Value = 6;
+      item.Name = inventoryCreateViewModel.Name;
+      item.Type = inventoryCreateViewModel.Type;
+      item.Value = inventoryCreateViewModel.Value;
       _itemRepository.Create(item);
 
       return RedirectToAction("Index", "Inventory");

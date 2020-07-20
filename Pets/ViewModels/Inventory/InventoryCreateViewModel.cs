@@ -13,5 +13,7 @@ namespace Pets.ViewModels.Inventory
     public String Name { get; set; }
 
     public ItemType Type { get; set; }
+
+    public int Value { get; set; }
   }
 }
